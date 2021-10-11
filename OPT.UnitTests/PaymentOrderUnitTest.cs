@@ -12,7 +12,7 @@ namespace OPT.UnitTests
     public class UnitTest1
     {
         [TestMethod]
-        public void HelloTest()
+        public void PhysicalProduct_Payment_Process_Should_Return_PackingSlip_Model_Test()
         {
             // Prepare
             var payamentModel = new PaymentModel()
@@ -25,10 +25,11 @@ namespace OPT.UnitTests
             // Act
             var processPayment = PaymentBuilder.PaymentFactory(payamentModel);
 
+            var packingSlipModel = processPayment.ProcessPayment();
 
             // Assert
-            Assert.IsNotNull(processPayment);
+            Assert.IsNotNull(packingSlipModel);
+            Assert.IsInstanceOfType(packingSlipModel, typeof(PackingSlipModel));
         }
-
     }
 }
