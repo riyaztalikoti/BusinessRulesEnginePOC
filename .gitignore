@@ -11,3 +11,5 @@
 /OPT.Entities/bin/Debug/net5.0
 /BLE.Business/bin/Debug/net5.0
 /OPT.Business/bin/Debug/net5.0
+/OPT.UnitTests/obj
+/OPT.UnitTests/bin/Release/net5.0

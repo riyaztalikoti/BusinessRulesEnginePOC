@@ -7,6 +7,6 @@ namespace OPT.Business
     /// </summary>
     public interface IPayment
     {
-        IPostPaymentProcess ProcessPayment();
+       // IPostPaymentProcess ProcessPayment();
     }
 }
