@@ -6,3 +6,7 @@
 /.vs
 /OPT.Entities/obj
 /OPT.Business/obj
+/OPT.UnitTests/bin/Debug
+/OPT.Entities/bin/Debug/net5.0/ref
+/OPT.Entities/bin/Debug/net5.0
+/BLE.Business/bin/Debug/net5.0
