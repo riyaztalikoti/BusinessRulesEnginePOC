@@ -23,6 +23,9 @@ namespace OPT.Business
                 case PaymentCategory.PhysicalProduct:
                     return new PhysicalProductPayment();
 
+                case PaymentCategory.Book:
+                    return new PaymentBook();
+
                 default:
                     throw new NotImplementedException("Order Payment is not implemented of the type " + nameof(orderPaymentBase));
             }

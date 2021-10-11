@@ -1,27 +1,22 @@
 ﻿using OPT.Business.Interface;
 using OPT.Business.Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace OPT.Business.Handlers
 {
-    public class PhysicalProductPayment : IPayment
+    public class PaymentBook : IPayment
     {
-        public PhysicalProductPayment()
-        {
-            // Todo:  Check if any DI container is required to configure for injection.
-        }
-
-
-        /// <summary>
-        /// Method to process payment for Product
-        /// </summary>
-        /// <returns></returns>
         public IPostPaymentProcess ProcessPayment()
         {
-            PackingSlipModel packingSlipModel = null;
+            IPostPaymentProcess postPaymentProcess = null;
+
             try
             {
-                packingSlipModel = new PackingSlipModel()
+                postPaymentProcess = new PackingSlipModel()
                 {
                     PackingSlipId = 1,
                     Description = "Mock data from business layer",
@@ -36,18 +31,18 @@ namespace OPT.Business.Handlers
                     Department = new Department()
                     {
                         DepartmentId = 1,
-                        DepartmentName="Shipping"
+                        DepartmentName = "Royalty"
                     }
-                    
+
                 };
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                // Todo:  Serilog consume ex structured way.
+                // use Serilog/DB
                 throw;
             }
-            // return PackingSlipModel
-            return packingSlipModel;
+
+            return postPaymentProcess;
         }
     }
 }

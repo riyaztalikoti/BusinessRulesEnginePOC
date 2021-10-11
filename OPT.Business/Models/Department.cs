@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace OPT.Business.Models
 {
-    class Department
+    public class Department
     {
+        public int DepartmentId { get; set; }
+        public string DepartmentName { get; set; }
     }
 }

@@ -14,5 +14,7 @@ namespace OPT.Business.Models
         public Address Address { get; set; }
 
         public string Description { get; set; }
+
+        public Department Department { get; set; }
     }
 }
