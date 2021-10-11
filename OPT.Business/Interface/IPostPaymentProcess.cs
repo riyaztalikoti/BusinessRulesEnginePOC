@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OPT.Business
+namespace OPT.Business.Interface
 {
-    public interface IOrderPaymentBase
+    public interface IPostPaymentProcess
     {
-        void ProcessOrder();
+        
     }
 }

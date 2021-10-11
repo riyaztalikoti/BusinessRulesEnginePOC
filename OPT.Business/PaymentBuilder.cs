@@ -1,4 +1,7 @@
-﻿using System;
+﻿using OPT.Business.Enums;
+using OPT.Business.Handlers;
+using OPT.Business.Interface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,15 +9,24 @@ using System.Threading.Tasks;
 
 namespace OPT.Business
 {
-    public class PaymentBuilder
+    public static class PaymentBuilder 
     {
-        private IPayment PaymentFactory(IOrderPaymentBase orderPaymentBase)
+        /// <summary>
+        /// Factory method to generate the object based on the category.
+        /// </summary>
+        /// <param name="orderPaymentBase"></param>
+        /// <returns></returns>
+        public static IPayment PaymentFactory(IOrderPaymentBase orderPaymentBase)
         {
-            switch (orderPaymentBase)
+            switch (orderPaymentBase.paymentCategory)
             {
+                case PaymentCategory.PhysicalProduct:
+                    return new PhysicalProductPayment();
+
                 default:
                     throw new NotImplementedException("Order Payment is not implemented of the type " + nameof(orderPaymentBase));
             }
         }
+
     }
 }
